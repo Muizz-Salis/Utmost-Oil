@@ -13,6 +13,21 @@ export const metadata: Metadata = {
   title: "UtmostOils",
   description: "Buy premium organic palm oil in various sizes. Direct delivery available.",
   generator: "Muizz",
+  icons: {
+    icon: [
+      {
+        url: "https://res.cloudinary.com/dmahzfixo/image/upload/w_32,h_32,c_fit/v1760528782/Utmost_logo-removebg-preview_mlb7tp.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "https://res.cloudinary.com/dmahzfixo/image/upload/w_16,h_16,c_fit/v1760528782/Utmost_logo-removebg-preview_mlb7tp.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+    apple: "https://res.cloudinary.com/dmahzfixo/image/upload/w_180,h_180,c_fit/v1760528782/Utmost_logo-removebg-preview_mlb7tp.png",
+  },
 }
 
 export default function RootLayout({

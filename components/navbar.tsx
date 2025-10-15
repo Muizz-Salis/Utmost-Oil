@@ -12,8 +12,11 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <div className="text-2xl font-bold text-primary">
-            PalmOil<span className="text-secondary">Market</span>
+          <div className="flex items-center gap-2">
+            <img src="https://res.cloudinary.com/dmahzfixo/image/upload/v1760528782/Utmost_logo-removebg-preview_mlb7tp.png" alt="Utmost Oil Logo" className="h-14 w-auto" />
+            <span className="text-2xl font-bold text-primary">
+              Utmost<span className="text-secondary">Oil</span>
+            </span>
           </div>
         </Link>
 

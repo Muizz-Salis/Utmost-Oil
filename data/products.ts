@@ -56,7 +56,7 @@ export const products: Product[] = [
     id: "palm-oil-10l",
     name: "Premium Palm Oil",
     size: "Ragolis 1 Litre",
-    price: 13000,
+    price: 1800,
     image: "https://res.cloudinary.com/dmahzfixo/image/upload/v1760453490/Utmost_-_Ragolis_hfe8ig.png",
     description: "Commercial size for restaurants and bulk buyers",
   }

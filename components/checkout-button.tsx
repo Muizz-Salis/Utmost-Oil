@@ -23,7 +23,7 @@ export function CheckoutButton({ phoneNumber }: CheckoutButtonProps) {
     })
 
     message += `%0A*Total Amount: ₦${totalPrice.toLocaleString()}*%0A%0A`
-    message += "Please confirm my order. Thank you!"
+    message += "Please confirm my order and provide your account details. Thank you!"
 
     // Clean phone number (remove any non-digit characters)
     const cleanPhone = phoneNumber.replace(/\D/g, "")
