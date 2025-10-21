@@ -36,7 +36,7 @@ export function ProductCard({ product }: ProductCardProps) {
             src={product.image || "/placeholder.svg"}
             alt={`${product.name} - ${product.size}`}
             fill
-            className={`${product.id === "palm-oil-20l" || product.image.includes("Utmost_25L_Yellow") || product.image.includes("Utmost_-_Ragolis") || product.image.includes("Utmost_25L_Blue") ? "object-cover" : "object-contain"} transition-transform group-hover:scale-105`}
+            className={`${product.category === "groundnut-oil" || product.category === "others" || product.id === "palm-oil-20l" || product.image.includes("Utmost_25L_Yellow") || product.image.includes("Utmost_-_Ragolis") || product.image.includes("Utmost_25L_Blue") ? "object-cover" : "object-contain"} transition-transform group-hover:scale-105`}
           />
         </div>
         <div className="p-3">

@@ -1,14 +1,17 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowLeft, Package } from "lucide-react"
+import { ArrowLeft, Package, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import { CheckoutButton } from "@/components/checkout-button"
 import { useCart } from "@/lib/cart-context"
 import { useRouter } from "next/navigation"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 // Replace with your actual WhatsApp business number
 const WHATSAPP_NUMBER = "2348166223968" // Format: country code + number (no + or spaces)
@@ -16,6 +19,11 @@ const WHATSAPP_NUMBER = "2348166223968" // Format: country code + number (no + o
 export default function CheckoutPage() {
   const { cart, totalPrice } = useCart()
   const router = useRouter()
+  const [deliveryInfo, setDeliveryInfo] = useState({
+    fullName: "",
+    phoneNumber: "",
+    address: "",
+  })
 
   useEffect(() => {
     if (cart.length === 0) {
@@ -41,6 +49,50 @@ export default function CheckoutPage() {
         <p className="text-muted-foreground mb-8">Review your order and complete checkout via WhatsApp</p>
 
         <div className="space-y-6">
+          {/* Delivery Information */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <MapPin className="h-5 w-5" />
+                Delivery Information
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="fullName">Full Name *</Label>
+                <Input
+                  id="fullName"
+                  placeholder="Enter your full name"
+                  value={deliveryInfo.fullName}
+                  onChange={(e) => setDeliveryInfo({ ...deliveryInfo, fullName: e.target.value })}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="phoneNumber">Phone Number *</Label>
+                <Input
+                  id="phoneNumber"
+                  type="tel"
+                  placeholder="Enter your phone number"
+                  value={deliveryInfo.phoneNumber}
+                  onChange={(e) => setDeliveryInfo({ ...deliveryInfo, phoneNumber: e.target.value })}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="address">Delivery Address *</Label>
+                <Textarea
+                  id="address"
+                  placeholder="Enter your complete delivery address"
+                  value={deliveryInfo.address}
+                  onChange={(e) => setDeliveryInfo({ ...deliveryInfo, address: e.target.value })}
+                  rows={3}
+                  required
+                />
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Order Summary */}
           <Card>
             <CardHeader>
@@ -68,6 +120,9 @@ export default function CheckoutPage() {
                 <span>Total Amount</span>
                 <span className="text-primary text-2xl">₦{totalPrice.toLocaleString()}</span>
               </div>
+              <p className="text-sm text-muted-foreground italic">
+                *Prices exclude delivery fee, which varies by location
+              </p>
             </CardContent>
           </Card>
 
@@ -76,6 +131,7 @@ export default function CheckoutPage() {
             <CardContent className="pt-6">
               <h3 className="font-semibold mb-2">How to complete your order:</h3>
               <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
+                <li>Fill in your delivery information above</li>
                 <li>Click the "Checkout via WhatsApp" button below</li>
                 <li>You'll be redirected to WhatsApp with your order details</li>
                 <li>Send the message to confirm your order</li>
@@ -85,7 +141,7 @@ export default function CheckoutPage() {
           </Card>
 
           {/* Checkout Button */}
-          <CheckoutButton phoneNumber={WHATSAPP_NUMBER} />
+          <CheckoutButton phoneNumber={WHATSAPP_NUMBER} deliveryInfo={deliveryInfo} />
 
           <p className="text-center text-sm text-muted-foreground">
             By proceeding, you agree to our terms and conditions
