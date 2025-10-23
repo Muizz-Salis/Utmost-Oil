@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
 // Replace with your actual WhatsApp business number
-const WHATSAPP_NUMBER = "2348166223968" // Format: country code + number (no + or spaces)
+const WHATSAPP_NUMBER = "2349035627450" // Format: country code + number (no + or spaces)
 
 export default function CheckoutPage() {
   const { cart, totalPrice } = useCart()

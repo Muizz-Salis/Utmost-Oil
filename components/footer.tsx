@@ -116,13 +116,13 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-[#ffb901] mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-white/80">
-                  123 Palm Street, Lagos, Nigeria
+                  Mobolaje modern market, beside durbar stadium Oyo, Oyo town
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-[#ffb901] flex-shrink-0" />
                 <a href="tel:+2348012345678" className="text-sm text-white/80 hover:text-[#ffb901] transition-colors">
-                  +234 801 234 5678
+                  +234 903 562 7450
                 </a>
               </li>
               <li className="flex items-center gap-3">

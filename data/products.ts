@@ -91,7 +91,7 @@ export const products: Product[] = [
     id: "groundnut-oil-5l",
     name: "Premium Golden Penny Oil",
     size: "5 Litres",
-    price: 14000,
+    price: 17000,
     image: "https://res.cloudinary.com/dmahzfixo/image/upload/v1761053033/Golden_Penny_Soya_Oil_4L_ttk3bs.png",
     description: "Large container for commercial or bulk home use",
     category: "groundnut-oil",
