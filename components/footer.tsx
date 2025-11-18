@@ -148,7 +148,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-4 text-sm text-white/80">
               <span className="flex items-center gap-1.5">
-                Made with <span className="text-[#ffb901]">❤️</span> by Muizz
+                
               </span>
             </div>
           </div>
